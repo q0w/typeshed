@@ -1,6 +1,6 @@
 import ssl
 import sys
-from _typeshed import StrOrBytesPath
+from _typeshed import StrOrBytesPath, SupportsItemsAndGetItem
 from email.message import Message
 from http.client import HTTPMessage, HTTPResponse, _HTTPConnectionProtocol
 from http.cookiejar import CookieJar
@@ -52,8 +52,8 @@ class Request:
     origin_req_host: str
     selector: str
     data: bytes | None
-    headers: dict[str, str]
-    unredirected_hdrs: dict[str, str]
+    headers: SupportsItemsAndGetItem[str, str]
+    unredirected_hdrs: SupportsItemsAndGetItem[str, str]
     unverifiable: bool
     method: str | None
     timeout: float | None  # Undocumented, only set after __init__() by OpenerDirector.open()
@@ -61,7 +61,7 @@ class Request:
         self,
         url: str,
         data: bytes | None = ...,
-        headers: dict[str, str] = ...,
+        headers: SupportsItemsAndGetItem[str, str] = ...,
         origin_req_host: str | None = ...,
         unverifiable: bool = ...,
         method: str | None = ...,
