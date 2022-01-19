@@ -4,7 +4,7 @@ from _typeshed import StrOrBytesPath, SupportsItemsAndItemAccess
 from email.message import Message
 from http.client import HTTPMessage, HTTPResponse, _HTTPConnectionProtocol
 from http.cookiejar import CookieJar
-from typing import IO, Any, Callable, ClassVar, Mapping, NoReturn, Pattern, Sequence, TypeVar, overload
+from typing import IO, Any, Callable, ClassVar, Mapping, MutableMapping, NoReturn, Pattern, Sequence, TypeVar, overload
 from urllib.error import HTTPError
 from urllib.response import addclosehook, addinfourl
 
@@ -52,8 +52,8 @@ class Request:
     origin_req_host: str
     selector: str
     data: bytes | None
-    headers: SupportsItemsAndItemAccess[str, str]
-    unredirected_hdrs: SupportsItemsAndItemAccess[str, str]
+    headers: MutableMapping[str, str]
+    unredirected_hdrs: MutableMapping[str, str]
     unverifiable: bool
     method: str | None
     timeout: float | None  # Undocumented, only set after __init__() by OpenerDirector.open()
