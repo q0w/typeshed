@@ -61,7 +61,7 @@ class Request:
         self,
         url: str,
         data: bytes | None = ...,
-        headers: SupportsItemsAndItemAccess[str, str] = ...,
+        headers: MutableMapping[str, str] = ...,
         origin_req_host: str | None = ...,
         unverifiable: bool = ...,
         method: str | None = ...,
