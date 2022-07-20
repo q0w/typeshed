@@ -26,6 +26,7 @@
         "stubs/aiofiles/aiofiles/tempfile/temptypes.pyi",
         "stubs/aiofiles/aiofiles/threadpool/utils.pyi",
         "stubs/annoy/annoy/annoylib.pyi",
+        "stubs/ansible",
         "stubs/aws-xray-sdk",
         "stubs/babel",
         "stubs/backports.ssl_match_hostname",
